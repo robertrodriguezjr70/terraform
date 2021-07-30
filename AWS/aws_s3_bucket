@@ -1,0 +1,20 @@
+provider "aws"{
+
+region = "us-west-1"
+
+access_key = "123..."
+secret_key = "123..."
+
+}
+
+
+resource "aws_s3_bucket" "my_s3_bucket"{
+
+    bucket = "my-s3-bucket-tarraform-test-001"
+    
+    versioning{
+        enabled = true
+
+    }
+
+}
