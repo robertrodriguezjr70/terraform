@@ -1,3 +1,5 @@
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs  <-- info on object properties
+
 terraform init
 
 brew install terraform
