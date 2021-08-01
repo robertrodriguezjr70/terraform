@@ -1,10 +1,23 @@
-resource "aws_iam_user" "my_iam_user"{
+variable "iam_user_name_prefix"{
+
+    default = "my_iam_users"
+}
 
 
-    name = "my_iam_user_abc"    
+provider "aws"{
+
+region = "us-west-1"
+
+access_key = " "
+secret_key = " "
 
 }
 
-output "my_iam_user_complete_details" {
-    value = aws_iam_user.my_iam_user
+
+resource "aws_iam_user" "my_iam_users"{
+
+    count = 6
+    name = "${var.iam_user_name_prefix}_${count.index}"    
+
 }
+
