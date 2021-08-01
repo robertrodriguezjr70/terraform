@@ -1,0 +1,50 @@
+provider "aws" {
+
+  region = "us-west-2"
+
+  access_key = "AKIATXBFLXFSGQAAV2OV"
+  secret_key = "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"
+
+}
+
+resource "aws_security_group" "http_server_sg" {
+
+  name   = "http_server_sg"
+  vpc_id = "vpc-e431fc82"
+
+  ingress {
+
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+  ingress {
+
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+
+  egress {
+
+    from_port   = 0 // allow traffic from/to anywhere
+    to_port     = 0
+    protocol    = -1 // allow all protocols
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+  
+  tags = {
+
+    name = "http_server_sg"
+
+}
+  
+
+}
