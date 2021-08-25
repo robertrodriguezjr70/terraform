@@ -1,8 +1,8 @@
 data "aws_instance" "websearch"{
   filter {
-    name = "tag:Name"
-    values = ["test_node"]   <-- what your searching for
-  }
+    name = "tag:Name"        < -- were looking for a tag called Name
+    values = ["test_node"]   <--  were looking for a tag value of test_node 
+    }
 
 }
 
