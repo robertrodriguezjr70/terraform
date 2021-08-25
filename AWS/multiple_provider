@@ -1,0 +1,12 @@
+provider "aws"{
+  region = "us-west1"
+  alias = "west1"            <-- alias
+
+}
+
+
+resource "aws_vpc" "vpcw1"{
+  cidr_block = "10.0.0.0/16"
+  profider = aws.west1        <-- using the alias
+
+}
