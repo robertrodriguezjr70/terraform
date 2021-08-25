@@ -1,0 +1,11 @@
+data "aws_instance" "websearch"{
+  filter {
+    name = "tag:Name"
+    values = ["test_node"]   <-- what your searching for
+  }
+
+}
+
+output "websrv_search"{
+  value = data.aws_instance.websearch.tags.name  <-- what your searching for
+}
