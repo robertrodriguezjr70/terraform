@@ -5,7 +5,7 @@ variable "server_names"{
 resource "aws_instance" "db"
   ami = "ami-......"
   instance_type = "t2.micro"
-  count = length(var.server_mames)
+  count = length(var.server_mames)  <-- count
   tags = {
     Name = var.server_names[count.index]
   }
