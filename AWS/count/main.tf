@@ -8,6 +8,6 @@ module "db"{
 }
   
 output "private_ips"{
-  "PrivateIP"
+  value = module.db.PrivateIP
 }
 
