@@ -1,0 +1,30 @@
+provider "aws" {
+
+  region = "us-west-2"
+
+  access_key = "AKIATXBFLXFSGQAAV2OV"
+  secret_key = "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"
+
+}
+
+
+resource "aws_instance" "db"{
+    ami = "ami-083ac7c7ecf9bb9b0"
+    instance_type = "t2.micro"
+    
+    tags {
+        Name = "db"
+    }
+}
+
+resource "aws_instance" "websvr"{
+    ami = "ami-083ac7c7ecf9bb9b0"
+    instance_type = "t2.micro"
+    count = 3                        # <-- three instance
+    tags {
+        Name = "websvr"
+    }
+    
+    depends_on = [aws_instance.db]   # <-- will run after db instance is created
+}
+
