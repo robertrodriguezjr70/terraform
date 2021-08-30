@@ -5,7 +5,9 @@ provider "aws"{
 module "db"{
   source = "./db"
   server_names = ["mariadb","mysql", "mssql"]
-
-
+}
+  
+output "private_ips"{
+  "PrivateIP"
 }
 
