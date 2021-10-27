@@ -30,3 +30,7 @@ terraform workspace new prod-env
 terraform workspace select default
 terraform workspace list
 terraform workspace select prod-env
+
+# which variable file to use at the command line
+terraform init
+terraform plan -var-file=<file.tfvars>
