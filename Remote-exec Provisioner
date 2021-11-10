@@ -1,0 +1,8 @@
+Remote-exec Provisioner
+
+The remote-exec provisioner invokes a script on a remote resource after it is created. This can be used to run a configuration management
+tool, bootstrap into a cluster, etc. To invoke a local process, see the local-exec provisioner instead. The remote-exec provisioner supports 
+both ssh and winrm type connections.
+
+
+For more information - https://www.terraform.io/docs/language/resources/provisioners/remote-exec.html
