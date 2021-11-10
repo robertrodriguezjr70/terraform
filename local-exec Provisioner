@@ -5,3 +5,6 @@ This invokes a process on the machine running Terraform, not on the resource. Se
 
 Note that even though the resource will be fully created when the provisioner is run, there is no guarantee that it will
 be in an operable state - for example system services such as sshd may not be started yet on compute resources.
+
+
+For more info - https://www.terraform.io/docs/language/resources/provisioners/local-exec.html
